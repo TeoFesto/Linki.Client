@@ -1,8 +1,8 @@
 namespace Linki.Client
 {
-    public partial class Form1 : Form
+    public partial class AuthenticationForm : Form
     {
-        public Form1()
+        public AuthenticationForm()
         {
             InitializeComponent();
         }
