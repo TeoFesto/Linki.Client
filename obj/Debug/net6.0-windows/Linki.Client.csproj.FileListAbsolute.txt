@@ -1,0 +1,17 @@
+C:\Users\ACER\Desktop\Linki\Linki.Client\bin\Debug\net6.0-windows\Linki.Client.exe
+C:\Users\ACER\Desktop\Linki\Linki.Client\bin\Debug\net6.0-windows\Linki.Client.deps.json
+C:\Users\ACER\Desktop\Linki\Linki.Client\bin\Debug\net6.0-windows\Linki.Client.runtimeconfig.json
+C:\Users\ACER\Desktop\Linki\Linki.Client\bin\Debug\net6.0-windows\Linki.Client.dll
+C:\Users\ACER\Desktop\Linki\Linki.Client\bin\Debug\net6.0-windows\Linki.Client.pdb
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.csproj.AssemblyReference.cache
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.csproj.GenerateResource.cache
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.AssemblyInfo.cs
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.dll
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\refint\Linki.Client.dll
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.pdb
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.genruntimeconfig.cache
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\ref\Linki.Client.dll
+C:\Users\ACER\Desktop\Linki\Linki.Client\obj\Debug\net6.0-windows\Linki.Client.AuthenticationForm.resources
