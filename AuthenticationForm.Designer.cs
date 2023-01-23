@@ -35,6 +35,8 @@
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.signInButton = new System.Windows.Forms.Button();
             this.signUpButton = new System.Windows.Forms.Button();
+            this.connectToServerLabel = new System.Windows.Forms.Label();
+            this.connectToServerStatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginInput
@@ -98,6 +100,7 @@
             this.signInButton.TabIndex = 8;
             this.signInButton.Text = "Войти";
             this.signInButton.UseVisualStyleBackColor = false;
+            this.signInButton.Click += new System.EventHandler(this.signInButton_Click);
             // 
             // signUpButton
             // 
@@ -112,12 +115,37 @@
             this.signUpButton.UseVisualStyleBackColor = false;
             this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
+            // connectToServerLabel
+            // 
+            this.connectToServerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.connectToServerLabel.AutoSize = true;
+            this.connectToServerLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.connectToServerLabel.Location = new System.Drawing.Point(59, 573);
+            this.connectToServerLabel.Name = "connectToServerLabel";
+            this.connectToServerLabel.Size = new System.Drawing.Size(330, 23);
+            this.connectToServerLabel.TabIndex = 11;
+            this.connectToServerLabel.Text = "Статус подключения к серверу:";
+            this.connectToServerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // connectToServerStatusLabel
+            // 
+            this.connectToServerStatusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.connectToServerStatusLabel.AutoSize = true;
+            this.connectToServerStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.connectToServerStatusLabel.Location = new System.Drawing.Point(28, 614);
+            this.connectToServerStatusLabel.Name = "connectToServerStatusLabel";
+            this.connectToServerStatusLabel.Size = new System.Drawing.Size(0, 23);
+            this.connectToServerStatusLabel.TabIndex = 12;
+            this.connectToServerStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AuthenticationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(438, 675);
+            this.Controls.Add(this.connectToServerStatusLabel);
+            this.Controls.Add(this.connectToServerLabel);
             this.Controls.Add(this.appNameLabel);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.signInButton);
@@ -127,6 +155,7 @@
             this.Controls.Add(this.loginInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AuthenticationForm";
+            this.Load += new System.EventHandler(this.AuthenticationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +174,7 @@
 
         //--MY_CODE---
         private Control testControl = new Control();
+        private Label connectToServerLabel;
+        private Label connectToServerStatusLabel;
     }
 }
