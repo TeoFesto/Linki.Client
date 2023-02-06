@@ -39,10 +39,11 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.emailInput = new System.Windows.Forms.TextBox();
             this.firstPasswordLabel = new System.Windows.Forms.Label();
-            this.firstPasswordInput = new System.Windows.Forms.TextBox();
+            this.passwordInput = new System.Windows.Forms.TextBox();
             this.secondPasswordLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.confirmPasswordInput = new System.Windows.Forms.TextBox();
             this.previousFormButton = new System.Windows.Forms.Button();
+            this.signUpStatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // appNameLabel
@@ -59,7 +60,7 @@
             // loginLabel
             // 
             this.loginLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginLabel.Location = new System.Drawing.Point(167, 187);
+            this.loginLabel.Location = new System.Drawing.Point(169, 156);
             this.loginLabel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(93, 36);
@@ -70,7 +71,7 @@
             // loginInput
             // 
             this.loginInput.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginInput.Location = new System.Drawing.Point(295, 187);
+            this.loginInput.Location = new System.Drawing.Point(297, 156);
             this.loginInput.Name = "loginInput";
             this.loginInput.Size = new System.Drawing.Size(304, 36);
             this.loginInput.TabIndex = 10;
@@ -91,17 +92,18 @@
             this.signUpButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.signUpButton.Location = new System.Drawing.Point(295, 482);
+            this.signUpButton.Location = new System.Drawing.Point(297, 451);
             this.signUpButton.Name = "signUpButton";
             this.signUpButton.Size = new System.Drawing.Size(304, 36);
             this.signUpButton.TabIndex = 16;
             this.signUpButton.Text = "Зарегистрироваться";
             this.signUpButton.UseVisualStyleBackColor = false;
+            this.signUpButton.Click += new System.EventHandler(this.signUpButton_Click);
             // 
             // nicknameLabel
             // 
             this.nicknameLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nicknameLabel.Location = new System.Drawing.Point(146, 241);
+            this.nicknameLabel.Location = new System.Drawing.Point(148, 210);
             this.nicknameLabel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.nicknameLabel.Name = "nicknameLabel";
             this.nicknameLabel.Size = new System.Drawing.Size(131, 36);
@@ -112,7 +114,7 @@
             // nicknameInput
             // 
             this.nicknameInput.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nicknameInput.Location = new System.Drawing.Point(295, 241);
+            this.nicknameInput.Location = new System.Drawing.Point(297, 210);
             this.nicknameInput.Name = "nicknameInput";
             this.nicknameInput.Size = new System.Drawing.Size(304, 36);
             this.nicknameInput.TabIndex = 18;
@@ -120,7 +122,7 @@
             // emailLabel
             // 
             this.emailLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emailLabel.Location = new System.Drawing.Point(146, 293);
+            this.emailLabel.Location = new System.Drawing.Point(148, 262);
             this.emailLabel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(131, 36);
@@ -131,7 +133,7 @@
             // emailInput
             // 
             this.emailInput.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.emailInput.Location = new System.Drawing.Point(295, 293);
+            this.emailInput.Location = new System.Drawing.Point(297, 262);
             this.emailInput.Name = "emailInput";
             this.emailInput.Size = new System.Drawing.Size(304, 36);
             this.emailInput.TabIndex = 20;
@@ -139,7 +141,7 @@
             // firstPasswordLabel
             // 
             this.firstPasswordLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstPasswordLabel.Location = new System.Drawing.Point(146, 345);
+            this.firstPasswordLabel.Location = new System.Drawing.Point(148, 314);
             this.firstPasswordLabel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.firstPasswordLabel.Name = "firstPasswordLabel";
             this.firstPasswordLabel.Size = new System.Drawing.Size(131, 36);
@@ -147,19 +149,19 @@
             this.firstPasswordLabel.Text = "Пароль";
             this.firstPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // firstPasswordInput
+            // passwordInput
             // 
-            this.firstPasswordInput.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstPasswordInput.Location = new System.Drawing.Point(295, 345);
-            this.firstPasswordInput.Name = "firstPasswordInput";
-            this.firstPasswordInput.Size = new System.Drawing.Size(304, 36);
-            this.firstPasswordInput.TabIndex = 22;
-            this.firstPasswordInput.UseSystemPasswordChar = true;
+            this.passwordInput.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.passwordInput.Location = new System.Drawing.Point(297, 314);
+            this.passwordInput.Name = "passwordInput";
+            this.passwordInput.Size = new System.Drawing.Size(304, 36);
+            this.passwordInput.TabIndex = 22;
+            this.passwordInput.UseSystemPasswordChar = true;
             // 
             // secondPasswordLabel
             // 
             this.secondPasswordLabel.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.secondPasswordLabel.Location = new System.Drawing.Point(146, 397);
+            this.secondPasswordLabel.Location = new System.Drawing.Point(148, 366);
             this.secondPasswordLabel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.secondPasswordLabel.Name = "secondPasswordLabel";
             this.secondPasswordLabel.Size = new System.Drawing.Size(143, 59);
@@ -167,14 +169,14 @@
             this.secondPasswordLabel.Text = "Повторить пароль";
             this.secondPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // confirmPasswordInput
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(295, 410);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 36);
-            this.textBox1.TabIndex = 24;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.confirmPasswordInput.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirmPasswordInput.Location = new System.Drawing.Point(297, 379);
+            this.confirmPasswordInput.Name = "confirmPasswordInput";
+            this.confirmPasswordInput.Size = new System.Drawing.Size(304, 36);
+            this.confirmPasswordInput.TabIndex = 24;
+            this.confirmPasswordInput.UseSystemPasswordChar = true;
             // 
             // previousFormButton
             // 
@@ -189,17 +191,27 @@
             this.previousFormButton.UseVisualStyleBackColor = false;
             this.previousFormButton.Click += new System.EventHandler(this.previousFormButton_Click);
             // 
+            // signUpStatusLabel
+            // 
+            this.signUpStatusLabel.AutoSize = true;
+            this.signUpStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.signUpStatusLabel.Location = new System.Drawing.Point(161, 516);
+            this.signUpStatusLabel.Name = "signUpStatusLabel";
+            this.signUpStatusLabel.Size = new System.Drawing.Size(0, 23);
+            this.signUpStatusLabel.TabIndex = 29;
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(880, 661);
+            this.Controls.Add(this.signUpStatusLabel);
             this.Controls.Add(this.previousFormButton);
             this.Controls.Add(this.secondPasswordLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.confirmPasswordInput);
             this.Controls.Add(this.firstPasswordLabel);
-            this.Controls.Add(this.firstPasswordInput);
+            this.Controls.Add(this.passwordInput);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.emailInput);
             this.Controls.Add(this.nicknameLabel);
@@ -228,9 +240,10 @@
         private Label emailLabel;
         private TextBox emailInput;
         private Label firstPasswordLabel;
-        private TextBox firstPasswordInput;
+        private TextBox passwordInput;
         private Label secondPasswordLabel;
-        private TextBox textBox1;
+        private TextBox confirmPasswordInput;
         private Button previousFormButton;
+        private Label signUpStatusLabel;
     }
 }

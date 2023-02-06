@@ -15,18 +15,23 @@ namespace Linki.Client
 {
     public static class ServerCommunicator
     {
-        static Queue<Request> requests = new Queue<Request>();
-        static Queue<Response> responses = new Queue<Response>();
-        static TcpClient client = new TcpClient();
-
-        public static IPEndPoint mainServerEndPoint = new IPEndPoint(IPAddress.Loopback, 8888);
-        public static IPEndPoint? personalServerEndPoint = null;
-        static private List<Label> connectionLabels = new List<Label>();
+        private static Queue<Request> requests = new Queue<Request>();
+        private static Queue<Response> responses = new Queue<Response>();
+        private static TcpClient client = new TcpClient();
+        private static IPEndPoint mainServerEndPoint = new IPEndPoint(IPAddress.Loopback, 8888);
+        private static IPEndPoint? personalServerEndPoint = null;
+        private static List<Label> connectionLabels = new List<Label>();
 
         public static void AddConnectionLabel(Label label)
         {
             connectionLabels.Add(label);
         }
+
+        public static void AddRequest(Request request)
+        {
+            requests.Enqueue(request);
+        }
+
         private static void ResetClient()
         {
             client.Close();
