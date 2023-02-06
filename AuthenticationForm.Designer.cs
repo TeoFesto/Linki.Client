@@ -131,7 +131,7 @@
             // 
             this.connectToServerStatusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.connectToServerStatusLabel.AutoSize = true;
-            this.connectToServerStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.connectToServerStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.connectToServerStatusLabel.Location = new System.Drawing.Point(28, 614);
             this.connectToServerStatusLabel.Name = "connectToServerStatusLabel";
             this.connectToServerStatusLabel.Size = new System.Drawing.Size(0, 23);

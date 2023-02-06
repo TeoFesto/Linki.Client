@@ -16,9 +16,8 @@ namespace Linki.Client
 
         private async void AuthenticationForm_Load(object sender, EventArgs e)
         {
-
+            Program.RunnedForms.Add(this);
             ServerCommunicator.AddConnectionLabel(connectToServerStatusLabel);
-
             Task.Run(ServerCommunicator.CheckConnectionToServer);
             Task.Run(ServerCommunicator.ReceiveResponses);
             Task.Run(ServerCommunicator.HandleResponses);

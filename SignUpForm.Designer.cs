@@ -44,12 +44,13 @@
             this.confirmPasswordInput = new System.Windows.Forms.TextBox();
             this.previousFormButton = new System.Windows.Forms.Button();
             this.signUpStatusLabel = new System.Windows.Forms.Label();
+            this.connectionStatusLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // appNameLabel
             // 
             this.appNameLabel.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.appNameLabel.Location = new System.Drawing.Point(283, 9);
+            this.appNameLabel.Location = new System.Drawing.Point(287, 9);
             this.appNameLabel.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.appNameLabel.Name = "appNameLabel";
             this.appNameLabel.Size = new System.Drawing.Size(316, 91);
@@ -195,10 +196,19 @@
             // 
             this.signUpStatusLabel.AutoSize = true;
             this.signUpStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.signUpStatusLabel.Location = new System.Drawing.Point(161, 516);
+            this.signUpStatusLabel.Location = new System.Drawing.Point(161, 498);
             this.signUpStatusLabel.Name = "signUpStatusLabel";
             this.signUpStatusLabel.Size = new System.Drawing.Size(0, 23);
             this.signUpStatusLabel.TabIndex = 29;
+            // 
+            // connectionStatusLabel
+            // 
+            this.connectionStatusLabel.AutoSize = true;
+            this.connectionStatusLabel.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.connectionStatusLabel.Location = new System.Drawing.Point(12, 630);
+            this.connectionStatusLabel.Name = "connectionStatusLabel";
+            this.connectionStatusLabel.Size = new System.Drawing.Size(0, 22);
+            this.connectionStatusLabel.TabIndex = 31;
             // 
             // SignUpForm
             // 
@@ -206,6 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(880, 661);
+            this.Controls.Add(this.connectionStatusLabel);
             this.Controls.Add(this.signUpStatusLabel);
             this.Controls.Add(this.previousFormButton);
             this.Controls.Add(this.secondPasswordLabel);
@@ -217,12 +228,14 @@
             this.Controls.Add(this.nicknameLabel);
             this.Controls.Add(this.nicknameInput);
             this.Controls.Add(this.signUpLabel);
-            this.Controls.Add(this.appNameLabel);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.loginInput);
+            this.Controls.Add(this.appNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SignUpForm";
+            this.Text = "1";
+            this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,5 +258,6 @@
         private TextBox confirmPasswordInput;
         private Button previousFormButton;
         private Label signUpStatusLabel;
+        private Label connectionStatusLabel;
     }
 }

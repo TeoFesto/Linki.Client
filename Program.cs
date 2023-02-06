@@ -11,16 +11,14 @@ namespace Linki.Client
 {
     internal static class Program
     {
-        
+        public static List<Form> RunnedForms = new List<Form>();
+
         [STAThread]
         async static Task Main()
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new AuthenticationForm()); 
         }
-
-        
-
 
     }
 }

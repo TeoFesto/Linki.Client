@@ -39,7 +39,7 @@ namespace Linki.Client
         }
         public static void UpdateConnectionLabels(string labelText, Color color)
         {
-            foreach(var label in connectionLabels)
+            foreach (var label in connectionLabels)
             {
                 label.Invoke(() =>
                 {
@@ -49,7 +49,7 @@ namespace Linki.Client
             }
         }
 
-        private static bool IsClientConnectedToPersonalServer()
+        public static bool IsClientConnectedToPersonalServer()
         {
             if (client.Client.RemoteEndPoint == null)
                 return false;
@@ -149,20 +149,20 @@ namespace Linki.Client
         {
             while (true)
             {
-                try
-                {
-                    if (requests.Count != 0)
-                    {
-                        Request request = requests.Dequeue();
-                        string jsonRequest = QueryJsonConverter.SerializeQueryMessage(request) + "\n";
-                        byte[] data = Encoding.UTF8.GetBytes(jsonRequest);
-                        await client.Client.SendAsync(data, SocketFlags.None);
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                }
+               if (requests.Count != 0)
+               {
+                   try
+                   {
+                       Request request = requests.Dequeue();
+                       string jsonRequest = QueryJsonConverter.SerializeQueryMessage(request) + "\n";
+                       byte[] data = Encoding.UTF8.GetBytes(jsonRequest);
+                       await client.Client.SendAsync(data, SocketFlags.None);
+                   }
+                   catch(Exception ex)
+                   {
+                        
+                   }
+               }
             }
         }
 

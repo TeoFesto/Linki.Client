@@ -53,5 +53,11 @@ namespace Linki.Client
                 ServerCommunicator.AddRequest(signUpRequest);
             }
         }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+            Program.RunnedForms.Add(this);
+            ServerCommunicator.AddConnectionLabel(connectionStatusLabel);
+        }
     }
 }
