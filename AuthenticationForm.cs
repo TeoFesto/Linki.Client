@@ -14,14 +14,27 @@ namespace Linki.Client
             this.Hide();
         }
 
-        private void AuthenticationForm_Load(object sender, EventArgs e)
+        private async void AuthenticationForm_Load(object sender, EventArgs e)
         {
-            Program.ConnectToServer(connectToServerStatusLabel);
+
+            ServerCommunicator.AddConnectionLabel(connectToServerStatusLabel);
+
+            Task.Run(ServerCommunicator.CheckConnectionToServer);
+            Task.Run(ServerCommunicator.ReceiveResponses);
+            Task.Run(ServerCommunicator.HandleResponses);
+            Task.Run(ServerCommunicator.SendRequests);
         }
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        
+
+        private void AuthenticationForm_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }
