@@ -185,7 +185,7 @@
             this.previousFormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.previousFormButton.ForeColor = System.Drawing.SystemColors.Menu;
             this.previousFormButton.Image = ((System.Drawing.Image)(resources.GetObject("previousFormButton.Image")));
-            this.previousFormButton.Location = new System.Drawing.Point(21, 26);
+            this.previousFormButton.Location = new System.Drawing.Point(12, 9);
             this.previousFormButton.Name = "previousFormButton";
             this.previousFormButton.Size = new System.Drawing.Size(65, 61);
             this.previousFormButton.TabIndex = 27;
@@ -235,6 +235,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SignUpForm";
             this.Text = "1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SignUpForm_FormClosed);
             this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -257,7 +258,7 @@
         private Label secondPasswordLabel;
         private TextBox confirmPasswordInput;
         private Button previousFormButton;
-        private Label signUpStatusLabel;
+        public Label signUpStatusLabel;
         private Label connectionStatusLabel;
     }
 }

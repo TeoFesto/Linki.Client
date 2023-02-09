@@ -51,6 +51,9 @@ namespace Linki.Client
             else
             {
                 ServerCommunicator.AddRequest(signUpRequest);
+                signUpStatusLabel.ForeColor = Color.DarkGray;
+                signUpStatusLabel.Text = "Регистрация...";
+
             }
         }
 
@@ -58,6 +61,12 @@ namespace Linki.Client
         {
             Program.RunnedForms.Add(this);
             ServerCommunicator.AddConnectionLabel(connectionStatusLabel);
+        }
+
+        private void SignUpForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.RunnedForms.Remove(this);
+            PreviousForm.Show();
         }
     }
 }

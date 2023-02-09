@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Drawing;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Linki.Client
 {
@@ -169,8 +170,7 @@ namespace Linki.Client
 
         public static async Task ReceiveResponses()
         {
-            
-            StringBuilder builder = new StringBuilder();
+            List<byte> bytes = new List<byte>();
             string jsonResponseQuery;
             Response response = new Response();
             while (true)
@@ -182,12 +182,12 @@ namespace Linki.Client
                     char c = (char)bufferByte[0];
                     if (c != '\n')
                     {
-                        builder.Append(c);
+                        bytes.Add(bufferByte[0]);
                     }
                     else
                     {
-                        jsonResponseQuery = builder.ToString();
-                        builder.Clear();
+                        jsonResponseQuery = Encoding.UTF8.GetString(bytes.ToArray());
+                        bytes.Clear();
                         response = (Response)QueryJsonConverter.DeserializeQuery(jsonResponseQuery);
                         responses.Enqueue(response);
                     }
@@ -221,6 +221,29 @@ namespace Linki.Client
                         catch (Exception ex)
                         {
                             ResetClient();
+                        }
+                    }
+                    else if(response is SignUpResponse signUpResponse)
+                    {
+                        foreach(var form in Program.RunnedForms)
+                        {
+                            if(form is SignUpForm signUpForm)
+                            {
+                                signUpForm.signUpStatusLabel.Invoke(() =>
+                                {
+                                    signUpForm.signUpStatusLabel.Text = signUpResponse.StatusMessage;
+
+                                });
+
+                                const string signUpConfirm = "Регистрация успешно завершена. Можете войти в аккаунт.";
+                                signUpForm.signUpStatusLabel.Invoke(() =>
+                                {
+                                    if (signUpForm.signUpStatusLabel.Text == signUpConfirm)
+                                        signUpForm.signUpStatusLabel.ForeColor = Color.Green;
+                                    else
+                                        signUpForm.signUpStatusLabel.ForeColor = Color.Red;
+                                });
+                            }
                         }
                     }
                 }

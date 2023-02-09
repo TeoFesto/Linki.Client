@@ -155,6 +155,7 @@
             this.Controls.Add(this.loginInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AuthenticationForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AuthenticationForm_FormClosing);
             this.Load += new System.EventHandler(this.AuthenticationForm_Load);
             this.Shown += new System.EventHandler(this.AuthenticationForm_Shown);
             this.ResumeLayout(false);

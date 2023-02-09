@@ -2,6 +2,7 @@ namespace Linki.Client
 {
     public partial class AuthenticationForm : Form
     {
+
         public AuthenticationForm()
         {
             InitializeComponent();
@@ -32,6 +33,11 @@ namespace Linki.Client
         
 
         private void AuthenticationForm_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AuthenticationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
 
         }
