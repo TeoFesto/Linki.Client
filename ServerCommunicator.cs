@@ -235,10 +235,9 @@ namespace Linki.Client
 
                                 });
 
-                                const string signUpConfirm = "Регистрация успешно завершена. Можете войти в аккаунт.";
                                 signUpForm.signUpStatusLabel.Invoke(() =>
                                 {
-                                    if (signUpForm.signUpStatusLabel.Text == signUpConfirm)
+                                    if (signUpResponse.isSignedUp)
                                         signUpForm.signUpStatusLabel.ForeColor = Color.Green;
                                     else
                                         signUpForm.signUpStatusLabel.ForeColor = Color.Red;
