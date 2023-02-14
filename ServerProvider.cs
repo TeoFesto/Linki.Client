@@ -14,7 +14,7 @@ using System.Runtime.CompilerServices;
 
 namespace Linki.Client
 {
-    public static class ServerCommunicator
+    public static partial class ServerProvider
     {
         private static Queue<Request> requests = new Queue<Request>();
         private static Queue<Response> responses = new Queue<Response>();
@@ -207,44 +207,7 @@ namespace Linki.Client
                 if(responses.Count != 0)
                 {
                     Response response = responses.Dequeue();
-                    if(response is ServerConnectionResponse connectionResponse)
-                    {
-                        try
-                        {
-                            personalServerEndPoint = new IPEndPoint(IPAddress.Parse(connectionResponse.ipAddress), connectionResponse.port);
-                            string confirmMessage = "CONFIRM ENDPOINT\n";
-                            byte[] data = Encoding.UTF8.GetBytes(confirmMessage);
-                            await client.Client.SendAsync(data, SocketFlags.None);
-                            ResetClient();
-                            await client.ConnectAsync(personalServerEndPoint);
-                        }
-                        catch (Exception ex)
-                        {
-                            ResetClient();
-                        }
-                    }
-                    else if(response is SignUpResponse signUpResponse)
-                    {
-                        foreach(var form in Program.RunnedForms)
-                        {
-                            if(form is SignUpForm signUpForm)
-                            {
-                                signUpForm.signUpStatusLabel.Invoke(() =>
-                                {
-                                    signUpForm.signUpStatusLabel.Text = signUpResponse.StatusMessage;
-
-                                });
-
-                                signUpForm.signUpStatusLabel.Invoke(() =>
-                                {
-                                    if (signUpResponse.isSignedUp)
-                                        signUpForm.signUpStatusLabel.ForeColor = Color.Green;
-                                    else
-                                        signUpForm.signUpStatusLabel.ForeColor = Color.Red;
-                                });
-                            }
-                        }
-                    }
+                    await ResponseHandler.Handle(response);
                 }
             }
         }
