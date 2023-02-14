@@ -18,16 +18,16 @@ namespace Linki.Client
         private async void AuthenticationForm_Load(object sender, EventArgs e)
         {
             Program.RunnedForms.Add(this);
-            ServerCommunicator.AddConnectionLabel(connectToServerStatusLabel);
-            Task.Run(ServerCommunicator.CheckConnectionToServer);
-            Task.Run(ServerCommunicator.ReceiveResponses);
-            Task.Run(ServerCommunicator.HandleResponses);
-            Task.Run(ServerCommunicator.SendRequests);
+            ServerProvider.AddConnectionLabel(connectToServerStatusLabel);
+            Task.Run(ServerProvider.CheckConnectionToServer);
+            Task.Run(ServerProvider.ReceiveResponses);
+            Task.Run(ServerProvider.HandleResponses);
+            Task.Run(ServerProvider.SendRequests);
         }
 
         private void signInButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         
