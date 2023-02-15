@@ -150,20 +150,25 @@ namespace Linki.Client
         {
             while (true)
             {
-               if (requests.Count != 0)
-               {
-                   try
-                   {
-                       Request request = requests.Dequeue();
-                       string jsonRequest = QueryJsonConverter.SerializeQueryMessage(request) + "\n";
-                       byte[] data = Encoding.UTF8.GetBytes(jsonRequest);
-                       await client.Client.SendAsync(data, SocketFlags.None);
-                   }
-                   catch(Exception ex)
-                   {
-                        
-                   }
-               }
+                if(requests.Count == 0)
+                {
+                     Thread.Sleep(10);
+                     continue;
+                }
+                else
+                {
+                    try
+                    {
+                        Request request = requests.Dequeue();
+                        string jsonRequest = QueryJsonConverter.SerializeQueryMessage(request) + "\n";
+                        byte[] data = Encoding.UTF8.GetBytes(jsonRequest);
+                        await client.Client.SendAsync(data, SocketFlags.None);
+                    }
+                    catch(Exception ex)
+                    {
+                         
+                    }
+                }
             }
         }
 
@@ -175,6 +180,12 @@ namespace Linki.Client
             Response response = new Response();
             while (true)
             {
+                if(client.Available == 0)
+                {
+                    Thread.Sleep(10);
+                    continue;
+                }
+
                 try
                 {
                     byte[] bufferByte = new byte[1];
@@ -204,7 +215,12 @@ namespace Linki.Client
         {
             while (true)
             {
-                if(responses.Count != 0)
+                if(responses.Count == 0)
+                {
+                    Thread.Sleep(10);
+                    continue;
+                }
+                else
                 {
                     Response response = responses.Dequeue();
                     await ResponseHandler.Handle(response);
